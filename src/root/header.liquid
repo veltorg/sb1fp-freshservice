@@ -1,0 +1,190 @@
+<div id="header-container"
+  data-ce="true"
+  data-ce-id="header"
+  data-ce-type="header"
+  data-ce-template-name="header"
+  data-outline-text="Header"
+>
+  <section class="pull-left header-section">
+        <div class="menu-container">
+      <button id="menu-icon" class="menu-trigger" menu-target="main-nav" role="button" aria-haspopup="menu"
+        aria-expanded="false">
+        {{image src="/assets/portal_v2/menu-white.svg" alt=(translate "portal.aria.menu") class="menu-icon" }}
+        {{image src="/assets/portal_v2/menu-white.svg" alt=(translate "portal.aria.menu") class="menu-white" }}
+      </button>
+      <nav id="main-nav" class="menu" role="menu">
+        <div class="show-on-mobile page-title">
+          {{image src=portal.logo alt=(concat portal.name " " (translate "portal.aria.logo")) class="portal-logo" }} <h1
+            class="portal-name">{{portal.name}}</h1>
+        </div>
+        <div class="main-nav-items">
+          <a href="/support/home" role="menuitem" class="home">
+            <img
+              src="https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/house%20(1).png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0">
+            <span>Hjem</span>
+          </a>
+          <a href="/support/solutions" role="menuitem" class="solution">
+            <img
+              src="https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/menu%20book%20(1).png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0">
+            <span>Løsninger</span>
+          </a>
+          <a href="/support/tickets" role="menuitem" class="ticket">
+            <img
+              src="https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/edit%20note.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0">
+            <span>Saker</span>
+          </a>
+          <a href="/support/catalog/items" role="menuitem" class="catalog">
+            <img
+              src="https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/folder%20open%20(1).png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0">
+            <span>Tjenestekatalog</span>
+          </a>
+          <a href="/support/employee_onboarding" role="menuitem" class="employee_onboarding">
+            <img
+              src="https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/person%20add%20(1).png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0">
+            <span>Onboardingforespørsler</span>
+          </a>
+          <a href="/support/employee_offboarding" role="menuitem" class="employee_offboarding">
+            <img
+              src="https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/person%20minus%20bla.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0">
+            <span>Offboardingforespørsler</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  
+  
+    <a href="{{ternary portal.linkback_url portal.linkback_url '/support/home'}}"
+      class="hide-on-mobile linkback-url" aria-label="{{portal.name}} {{translate "portal.aria.logo"}}">
+        {{image src=portal.logo alt="" class="portal-logo" }}
+    </a>
+    
+    <h1 class="portal-name hide-on-mobile">{{{portal.name}}}</h1>
+  </section>
+
+  <section class="pull-right header-section">
+    <section id="search-header" class="hide-on-home hide-on-login-signup">
+      <button id="search-header-mobile" class="ficon-search show-on-mobile" aria-label="{{translate "portal.common.search" }}"></button>
+      <form role='search' id="search-form-header" class="hide-on-mobile">
+        <i class="ficon-search" role="presentation"></i>
+        <input 
+        type        = "search" 
+        id          = "header-search"
+        class       = "hide-on-home hide-on-login search-input"
+        placeholder = "{{translate 'portal.common.search'}}" 
+        aria-label  = "{{translate "portal.home_search_placeholder" }}" />
+      </form>
+    </section>
+    <div class="helpdesk-number {{ternary portal.contact_information 'ficon-phone' ''}} hide-on-mobile">
+      {{{portal.contact_information}}}
+    </div>
+    {{#if portal.logged_in}}
+      {{!-- New Request menu --}}
+      <div class="menu-container hide-on-home hide-on-login-signup">
+
+        <button 
+          id            = "btn-header-request"
+          class         = "btn menu-trigger" 
+          menu-target   = "request-dropdown" 
+          aria-expanded = "false" 
+          aria-label    = "{{translate "portal.aria.new_menu"}}" 
+          aria-haspopup = "menu" 
+          aria-controls = "request-dropdown">
+          <span class="elem-inline-mid">{{translate "portal.common.new"}}</span>
+        </button>
+        
+        <nav role="menu" class="menu" id="request-dropdown">
+          <a href         = "/support/tickets/new"
+            role          = "menuitem" 
+            class         = "incident"
+            aria-controls = "page-main">
+              <h2>{{translate "portal.request_menu.incident_title"}}</h2>
+              <p>{{translate "portal.request_menu.incident_text"}}</p>
+          </a>
+            {{#requestmenu}}
+              {{#if show}}
+                <a href = "{{url}}"
+                  role          = "menuitem"
+                  class         = "{{className}}"
+                  aria-controls = "page-main">
+                    <h2>{{title}}</h2>
+                    <p>{{text}}</p>
+                </a>
+              {{/if}}
+            {{/requestmenu}}
+        </nav>
+
+      </div>
+
+    {{!-- User Dropdown menu and Notifications --}}
+      {{> user_notifications}}
+      <div class="menu-container">
+        <button 
+          id            = "btn-profile-options"
+          class         = "menu-trigger" 
+          menu-target   = "user-dropdown"
+          aria-haspopup = "menu" 
+          aria-expanded = "false" 
+          aria-label    = "{{translate "portal.aria.profile_menu"}}" >
+            {{avatar name=user_info.full_name url=user_info.profile_pic class="user-profile-pic"}}
+        </button>
+
+        <div class="menu" id="user-dropdown">
+          <div class="user-profile-info">
+            <div class="user-pic-thumb">
+              {{avatar name=user_info.first_name url=user_info.profile_pic class="user-profile-pic"}}
+            </div>
+            <span>{{user_info.first_name}} {{user_info.last_name}}</span>
+          </div>
+
+          <div role="menu">
+            <a href         = "/support/profile/edit"
+              role          = "menuitem"
+              aria-controls = "page-main">
+                {{translate "portal.user_dropdown.edit_profile"}}
+            </a>
+            {{#if portal.switch_to_agent_portal}}
+              <a href         = "/support/agent_portal/view"
+                 id            = "switch-agent-portal"
+                 role          = "menuitem">
+                  {{translate "portal.user_dropdown.switch_to_agent_portal"}}
+              </a>
+            {{/if}}
+            {{#if portal.switch_portal}}
+            <a href         = "javascript:void(0)"
+              id            = "switch-portal"
+              role          = "menuitem" 
+              aria-controls = "page-main">
+                {{translate "portal.ask_bot_name" bot_name=portal.bot_name}}
+            </a>
+            {{/if}}
+            <a href         = "/support/announcements"
+              role          = "menuitem"
+              aria-haspopup = "dialog">
+                {{translate "portal.announcements"}}
+            </a>
+            {{#if features.project_management}}
+            <a href         = "/a/project_management/projects"
+               role          = "menuitem"
+               aria-haspopup = "dialog"
+               target        = "_blank">
+                {{translate "portal.project_management"}}
+                {{image src="/images/portal_v2/open-in-new-tab.svg" alt=(translate "portal.aria.external") class="external-link"}}
+            </a>
+            {{/if}}
+            <a href         = "/logout"
+              role          = "menuitem" 
+              aria-controls = "page-main">
+                {{translate "portal.user_dropdown.sign_out"}}
+            </a>
+          </div>
+
+        </div>
+      </div>
+    {{else}}
+      <a href="/support/login" class="header-text btn">{{translate "portal.login"}}</a>
+      {{#if features.signup }}
+        <a href="/support/signup" class="header-text btn">{{translate "portal.signup"}}</a>
+      {{/if}}
+    {{/if}}
+  </section>
+</div>

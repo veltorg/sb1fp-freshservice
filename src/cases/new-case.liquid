@@ -1,0 +1,41 @@
+<section id="ticket-new-main">
+    <div class="ticket-new-header">
+        <nav class="breadcrumbs-container">
+        <ol>
+          <li class="breadcrumb-item-0">
+            <a class="breadcrumbs-link" href="/support/home">
+              <span>{{ translate "portal.home"}}</span>
+            </a>
+          <div class="ficon-arrow-right" role="presentation">
+          </div>
+          </li>
+          <li class="breadcrumb-item-1">
+            <div class="breadcrumbs-link-header" >
+              <span>Fyll ut skjema</span>
+            </div>
+          </li>
+        </ol>
+      </nav>   
+      <h2 id="ticket-new-title" tabindex="-1">Fyll ut skjema</h2>
+    </div>
+    <div id="ticket-new-body">
+      {{> ticket_new_form}}
+    </div>
+  </section>
+  {{#if enableSolnSuggest}}
+    <aside class="suggested-articles empty-list">
+      <h2 class="results-title">{{translate "portal.incident.suggested_articles.title"}}</h2>
+      <span id="soln-article-sr-update" class="sr-only" aria-live="polite"></span>
+      <ul id="suggested-aricles-list"></ul>
+      <div class="illustration-container">
+        <div class="help-text">
+          <h2>{{translate "portal.incident.suggested_articles.info"}}</h2>
+          <p>{{translate "portal.incident.suggested_articles.info_desc"}}</p>
+        </div>
+        <div class="articles-not-found">
+          <h2>{{translate "portal.incident.suggested_articles.no_articles_info"}}</h2>
+          <p>{{translate "portal.incident.suggested_articles.no_articles_desc"}}</p>
+        </div>
+      </div>
+    </aside>
+  {{/if}}

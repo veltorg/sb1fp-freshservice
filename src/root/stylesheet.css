@@ -1,0 +1,108 @@
+:root {
+  --vann: #005AA4;
+  --fjell: #002776;
+  --frost: #7EB5D2;
+  --frost30: #D8E9F2;
+  --sand: #F8E9DD;
+  --syrin: #D3D3EA;
+  --nordlys: #33AF85;
+  --skog: #00754E;
+  --skog_hover: #095139;
+  --villblomst30: #FADDE1;
+  --bg_color: var(--sand);
+  --header_color: var(--vann);
+  --headingsColor: var(--fjell);
+  --button-radius: 6em;
+}
+
+header #header-container .portal-name {
+    color: white;
+}
+
+.wave { 
+}
+.wave svg {
+  fill: var(--fjell)
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--button-radius);
+  background: white;
+  border: 2px solid var(--vann);
+  color: var(--vann);
+}
+.btn:hover {
+  background: var(--fjell);
+  border: 2px solid var(--fjell);
+  color: white;
+}
+.btn.btn-primary {
+  background: var(--skog);
+  border: 2px solid transparent;
+  color: white;
+}
+.btn.btn-primary:hover {
+  background: var(--skog_hover);
+  border: 2px solid transparent;
+}
+#btn-submit {
+  background: var(--vann);
+}
+#btn-submit:hover {
+  background: var(--fjell);
+}
+
+/* Notification icon */
+.ficon-notifications {
+  color: white;
+}
+.ficon-notifications:hover {
+  color: var(--fjell);
+}
+
+/* Sidebar: aside */
+aside.suggested-articles {
+  background: transparent;
+}
+#page-main > aside > div {
+  background: none;
+  padding-top: 0;
+}
+
+#home-page-container #cards-banner .card {
+  border-radius: 1em;
+}
+
+/* menu bar */
+header nav#main-nav a.active img {
+	filter: brightness(0) invert(1);
+}
+
+/* Dropdown menu */
+header #request-dropdown a.incident {
+ background-image: url(https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/edit%20note.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0);
+ background-size: 3.4em;
+}
+header #request-dropdown a.service-request {
+  background-image: url(https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/folder%20open%20%281%29.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0);
+ background-size: 3.2em;
+}
+header #request-dropdown a.employee-onboarding {
+  background-image: url(https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/person%20add%20%281%29.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0);
+ background-size: 3.2em;
+  
+}
+header #request-dropdown a.employee-offboarding {
+  background-image: url(https://dev.azure.com/srbankfp/ee4c914d-195f-4f2a-9887-d1b07c5740f2/_apis/git/repositories/0d858fe4-d014-4bfc-a9f4-3556d973eeb9/items?path=/src/assets/Ikoner/person%20minus%20bla.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=xillians/update-feedback&resolveLfs=true&%24format=octetStream&api-version=5.0);
+ background-size: 3.2em;
+}
+
+/* Solutions page */
+#page-main .solutions-home-container{
+  border-radius: 1em;
+}
+.solutions-home-header {
+	background-color: var(--frost30);
+	border-radius: 1em 1em 0 0;
+}

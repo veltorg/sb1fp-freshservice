@@ -1,0 +1,100 @@
+<section id="home-page-container" data-ce-version="2.1">
+  <section 
+    id="hero-banner"
+    data-ce="true"
+    data-ce-id="hero-banner"
+    data-ce-type="section"
+    data-ce-subtype="hero"
+    data-ce-template-name="home" style="background-color: #005aa4; background: url('https://eucattachment.freshservice.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEwMDAwMTY3MDQ0LCJkb21haW4iOiJzcGFyZWJhbmsxc3ItYmFua2ZvcnJldG5pbi1mcy1zYW5kYm94LmZyZXNoc2VydmljZS5jb20iLCJ0eXBlIjoxfQ.ZfPFBEySp-h_E-EL2BcZC5L2EGN7dHi5_hcy1O0zbBY') no-repeat rgb(0, 90, 164); background-size: cover;"
+  >
+    <div class="hero-banner-container">
+      <h2 data-ce-translation="portal.home_title" data-ce-id="heroTitle" data-ce="true" data-ce-content="static" data-ce-type="text" data-placeholder="{{translate 'portal.builder.enter_your_text'}}">
+        <strong>{{customTranslate "portal.home_title"}}</strong>
+      </h2>
+      <section id="banner-search">
+        <form role='search' id="search-form">
+          <i class="ficon-search" role="presentation"></i>
+          <input
+          type="search"
+          id="global-search-home"
+          class="search-input"
+          aria-label="{{ translate 'portal.search.search_text'}}"
+          placeholder="{{translate 'portal.home_search_placeholder'}}" />
+        </form>
+      </section>
+      <section id="announcement-banner" role="region"
+        aria-label="{{translate 'portal.announcements'}}">
+        {{#announcement}}
+          <div class="announcement-banner-container">
+              <a class="announcement-link" href="/support/announcements/{{id}}">
+                <div class="announcement-latest">
+                  <div class="announcement-postedby-img">
+                    {{avatar name=user.name url=user.avatar_url class="user-profile-pic"}}
+                  </div>
+                  <div class="announcement-content">
+                    <h2 class="announcement-title">{{title}}</h2>
+                    <p class="announcement-postedby">{{{ translate "portal.announcements_sidebar.posted_by" user_name=user.name created_on=(timediff planned_start_date) }}}</p>
+                  </div>
+                </div>
+              </a>
+            <div class="announcement-show-all">
+              <a class="announcement-show-all-link" href="/support/announcements">
+                  {{translate "portal.view_all"}}
+              </a>
+            </div>
+          </div>
+        {{/announcement}}
+      </section>
+    </div>
+  </section><section data-ce="true" class="custom-section custom-item active-section" data-ce-id="006fe62f-c590-4e56-bd3c-d5ed435b74ee" data-ce-type="section" data-ce-subtype="custom" data-ce-content="static" data-ce-template-name="home" style="background-color: #f8e9dd;">
+    <div class="custom-section-content columns-1">	<div class="custom-section-column" data-ce-id="ef977bb0-5272-4213-b911-7cb0b3bd60db">
+			<div data-ce="true" data-ce-content="static" data-ce-type="text" data-ce-subtype="widget" data-ce-id="efb7f11c-a9c0-46c6-8c09-186944e13b1e" data-ce-template-name="home" data-widget-name="text" data-ce-translation="portal.text_5b18af1b-c1fe-4e66-8b03-84cd1aedda35" data-ce-children-editable="false" class="custom-text pointer-auto designer-widget active-widget" data-placeholder="Skriv inn teksten din" data-ce-draggable="true" style>{{customTranslate "portal.text_5b18af1b-c1fe-4e66-8b03-84cd1aedda35"}}</div></div>
+</div>
+</section>
+
+  <section 
+    id="cards-banner" 
+    class="banner-{{cards.length}}" 
+    data-ce="true" 
+    data-ce-type="section"
+    data-ce-subtype="cards" 
+    data-ce-id="cards-banner" 
+    data-ce-template-name="home" data-card-template="2"
+  >
+    {{#each cards}}	
+      <a 
+        href="{{url}}" 
+        class="card"
+        {{conditional_attribute external_image 'target' '_blank'}} 
+        data-ce="true" 
+        data-ce-type="card"
+        data-ce-subtype="default"
+        data-ce-template-name="home"
+        data-ce-children-editable="true"
+        role="{{role}}"
+        aria-label="{{aria-label}}"
+        data-ce-custom={{ternary isCustom "true" "false"}}
+        data-ce-id={{ternary ceId ceId (concat "default-card-" (toString @index))}}
+      >
+        {{image src=img alt="" role="presentation" class="elem-inline-mid"}}
+        <div class="elem-inline-mid card-text">
+          <h3 data-ce-translation="{{titleTranslationPath}}">
+            {{title}}
+            {{#if external_image}}
+                {{image src="/images/portal_v2/open-in-new-tab.svg" alt=(translate "portal.aria.external") class="external-link"}}
+            {{/if}}
+          </h3>
+          <p data-ce-translation="{{contentTranslationPath}}">  
+            {{content}}
+          </p>
+        </div>
+      </a>
+    {{/each}}
+  </section>
+
+  {{#if portal.logged_in}}
+    <section id="home-lists-container" class="list-container" data-ce="true" data-ce-type="section" data-ce-subtype="tickets" data-ce-id="home-lists-container" data-ce-template-name="home">
+      {{> loader}}
+    </section>
+  {{/if}}
+</section>
