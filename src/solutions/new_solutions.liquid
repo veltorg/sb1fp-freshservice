@@ -1,0 +1,66 @@
+<section class="solutions-home-container">
+  <header class="solutions-home-header">
+    {{> breadcrumbs this }}
+    <div>
+      <i class="solutions-browse-icon" role="presentation"></i><div
+        class="solutions-summary">
+          <h2 id="solutions-summary-title" tabindex="-1" class="solutions-summary-title">{{translate "portal.solutions.title"}}</h2>
+          <p class="solutions-summary-text">Finn retningslinjer eller les vanlige spørsmål for å løse saken selv.</p>
+      </div>
+    </div>
+  </header>
+  <div id="solutions-home-main-container" class="solutions-home-main-container">
+    {{#if showLoader}}
+      <div class="solutions-loader-container">
+        <div id="solutions-category-list-wrap-ele">
+          <section class="solutions-category-list">
+            {{> loader}}
+          </section>
+        </div>
+        <div class="solutions-content-container">{{> solution_home_grid_loader}}</div>
+      </div>
+    {{else if (isCategoriesEmpty categories)}}
+      <div class="solutions-empty-content-icon solutions-no-articles-icon"></div>
+      <p class="solutions-empty-content-text">
+        <span id="solutions-empty-content-text" tabindex="-1">{{translate "portal.solutions.empty_articles"}}</span>
+      </p>
+    {{else}}
+      <aside data-sticky-wrap="true" data-sticky-wrapwith="<span id='solutions-category-list-wrap-ele'></span>" data-sticky-class="is_stuck" class="solutions-category-list-nav hide-on-mobile">
+        <ul id="solutions-category-list" class="solutions-category-list" role="list">
+          <li class="solutions-category-list-item">
+            <a id="solutions-category-popular-articles"
+              class="solutions-category-link solutions-popular-articles-category"
+              href="/support/solutions/">
+                <i class="ficon-star-fill" role="presentation"></i>
+                <span class="solutions-category-name ellipsis">{{translate "portal.solutions.popular_articles"}}</span>
+                <i class="ficon-arrow-right" role="presentation"></i>
+            </a>
+          </li>
+          {{#categories}}
+            {{#if folders_count}}
+              <li class="solutions-category-list-item">
+                <a id="solutions-category-item-{{id}}" data-name="{{name}}"
+                  class="solutions-category-link" href="/support/solutions/{{id}}">
+                    <span class="solutions-category-name ellipsis">{{name}}</span>
+                    <i class="ficon-arrow-right" role="presentation"></i>
+                </a>
+              </li>
+            {{/if}}
+          {{/categories}}
+        </ul>
+      </aside>
+      <div class="categories-list-solution-section show-on-mobile">
+        <select id="solutions-category-list-mobile">
+          <option data-url="/support/solutions/">{{translate "portal.solutions.popular_articles"}}</option>
+          {{#categories}}
+            {{#if folders_count}}
+              <option data-url="/support/solutions/{{id}}" value="{{id}}">{{name}}</option>
+            {{/if}}
+          {{/categories}}
+        </select>
+      </div>
+      <div id="solutions-content-container"
+        class="solutions-content-container"></div>
+    {{/if}}
+  </div>
+</section>
