@@ -94,6 +94,12 @@ header #request-dropdown a.employee-offboarding {
 .solutions-browse-icon {
   background-image: url(https://raw.githubusercontent.com/veltorg/sb1fp-freshservice/496c59978b15648b23db257ff273cbace48d663c/src/assets/Illustrasjoner/Lysp%C3%A6re%2003.svg);
 }
+
+.articles-related-container {
+  background-color: transparent;
+  border-left: none;
+}
+
 /* Service catalog */
 #catalog-list-page #catalog-list-header #catalog-list-header-items .catalog-image {
   background-image: url(https://raw.githubusercontent.com/veltorg/sb1fp-freshservice/29c4b475aabf999409698fee1536638630c002d6/src/assets/Illustrasjoner/Merkevare%203%20lys%20bakgrunn.svg);
